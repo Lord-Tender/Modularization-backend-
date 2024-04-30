@@ -6,7 +6,7 @@ let uri = process.env.URI
 let cors = require('cors')
 const mongoose = require('mongoose')
 const userRouter = require("./Routes/User.Route")
-const allowedOrigins = [`http://localhost:${port}`, 'https://your-production-app.com']
+const allowedOrigins = [`http://localhost:${port}`, 'https://modularization-backend.vercel.app']
 const corsOptions = {
     origin: allowedOrigins,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
