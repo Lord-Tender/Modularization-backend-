@@ -10,16 +10,7 @@ const allowedOrigins = [`http://localhost:5173`]
 
 app.use(express.urlencoded( {extended:true, limit: "50mb"} ))
 
-app.use(cors({
-    origin: function (origin, callback) {
-      // Check if the origin is allowed or if it's a request from the same origin (e.g., when running locally)
-      if (!origin || allowedOrigins.includes(origin) || origin.startsWith('http://localhost')) {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    }
-  }))
+app.use(cors())
 app.use(express.json( { limit: "50mb" } ))
 app.use('/', userRouter)
 
